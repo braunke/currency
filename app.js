@@ -9,7 +9,7 @@ app.engine('.hbs', exp_hbs({
     extname:'.hbs',
     defaultLayout: 'main'}));
 app.set('view engine', '.hbs');
-app.use(express.static(path.join(__dirname, 'static')))
+app.use(express.static(path.join(__dirname, 'static')));
 
 app.use('/', routes);
 app.use('/about', about);
