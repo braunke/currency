@@ -13,15 +13,17 @@ router.get('/', function(req, res){
 /* Handle currency form submit */
 router.get('/convert', function(req, res){
     var originalCurrencyAmount = parseFloat(req.query.dollar_amount);
-
+    //gets the original currency
     var originalCurrency = req.query.fromCurrency;
+    //changes to dollars
     var originalToDollarRate = exchangeRates[originalCurrency];
     var dollars = originalCurrencyAmount / originalToDollarRate;
-
+    //gets the currency you are changing to
     var desiredCurrency = req.query.to_currency;
     var dollarToDesiredRate = exchangeRates[desiredCurrency];
+    //does the conversion
     var result = dollars * dollarToDesiredRate;
-
+    //results, money about formatted to look better
     res.render('results', { dollars : originalCurrencyAmount.toFixed(2),
         result: result.toFixed(2), currency: desiredCurrency, from : originalCurrency})
 });
