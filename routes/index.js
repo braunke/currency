@@ -21,7 +21,7 @@ router.get('/convert', function(req, res){
         } else {
             var originalCurrencyAmount = parseFloat(req.query.dollar_amount);
             //changes to dollars
-            var originalToDollarRate = data.originalToDollarRate;
+            var originalToDollarRate = data.originalToDollarRate;//just grabs the one exchange rate
             var dollars = originalCurrencyAmount / originalToDollarRate;
             var dollarToDesiredRate = data.dollarToDesiredRate;
             //does the conversion
