@@ -9,5 +9,10 @@
   },
   "description": "Currency Converter",
   "main": "app.js",
-  "author": "Kayla"
+  "author": "Kayla",
+
+"engines":{
+"node": "6.10.0",
+"npm": "3.10.10"
+}
 }
